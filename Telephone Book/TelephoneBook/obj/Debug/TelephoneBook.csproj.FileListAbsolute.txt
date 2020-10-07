@@ -1,0 +1,7 @@
+D:\TU\Telephone Book\TelephoneBook\bin\Debug\TelephoneBook.exe.config
+D:\TU\Telephone Book\TelephoneBook\bin\Debug\TelephoneBook.exe
+D:\TU\Telephone Book\TelephoneBook\bin\Debug\TelephoneBook.pdb
+D:\TU\Telephone Book\TelephoneBook\obj\Debug\TelephoneBook.csprojAssemblyReference.cache
+D:\TU\Telephone Book\TelephoneBook\obj\Debug\TelephoneBook.csproj.CoreCompileInputs.cache
+D:\TU\Telephone Book\TelephoneBook\obj\Debug\TelephoneBook.exe
+D:\TU\Telephone Book\TelephoneBook\obj\Debug\TelephoneBook.pdb
