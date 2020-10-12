@@ -141,9 +141,8 @@ namespace TelephoneBook
         private static void SelectionSort(People[] phonebook, int end)
         {
             int minIndex = 0;
-            int i = 0;
 
-            for (; i < end - 1; i++)
+            for (int i = 0; i < end - 1; i++)
             {
                 minIndex = i;
                 for (int j = i + 1; j < end; j++)
