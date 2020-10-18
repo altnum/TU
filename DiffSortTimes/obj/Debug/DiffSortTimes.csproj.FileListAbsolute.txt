@@ -1,0 +1,7 @@
+D:\TU\DiffSortTimes\bin\Debug\DiffSortTimes.exe.config
+D:\TU\DiffSortTimes\bin\Debug\DiffSortTimes.exe
+D:\TU\DiffSortTimes\bin\Debug\DiffSortTimes.pdb
+D:\TU\DiffSortTimes\obj\Debug\DiffSortTimes.csprojAssemblyReference.cache
+D:\TU\DiffSortTimes\obj\Debug\DiffSortTimes.csproj.CoreCompileInputs.cache
+D:\TU\DiffSortTimes\obj\Debug\DiffSortTimes.exe
+D:\TU\DiffSortTimes\obj\Debug\DiffSortTimes.pdb

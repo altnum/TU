@@ -1,0 +1,7 @@
+D:\TU\Task Distribution\TaskDistributionToMachines\bin\Debug\TaskDistributionToMachines.exe.config
+D:\TU\Task Distribution\TaskDistributionToMachines\bin\Debug\TaskDistributionToMachines.exe
+D:\TU\Task Distribution\TaskDistributionToMachines\bin\Debug\TaskDistributionToMachines.pdb
+D:\TU\Task Distribution\TaskDistributionToMachines\obj\Debug\TaskDistributionToMachines.csprojAssemblyReference.cache
+D:\TU\Task Distribution\TaskDistributionToMachines\obj\Debug\TaskDistributionToMachines.csproj.CoreCompileInputs.cache
+D:\TU\Task Distribution\TaskDistributionToMachines\obj\Debug\TaskDistributionToMachines.exe
+D:\TU\Task Distribution\TaskDistributionToMachines\obj\Debug\TaskDistributionToMachines.pdb
