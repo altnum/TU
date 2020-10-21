@@ -1,0 +1,7 @@
+D:\TU\TestDiffSortAlgorithms\bin\Debug\TestDiffSortAlgorithms.exe.config
+D:\TU\TestDiffSortAlgorithms\bin\Debug\TestDiffSortAlgorithms.exe
+D:\TU\TestDiffSortAlgorithms\bin\Debug\TestDiffSortAlgorithms.pdb
+D:\TU\TestDiffSortAlgorithms\obj\Debug\TestDiffSortAlgorithms.csprojAssemblyReference.cache
+D:\TU\TestDiffSortAlgorithms\obj\Debug\TestDiffSortAlgorithms.csproj.CoreCompileInputs.cache
+D:\TU\TestDiffSortAlgorithms\obj\Debug\TestDiffSortAlgorithms.exe
+D:\TU\TestDiffSortAlgorithms\obj\Debug\TestDiffSortAlgorithms.pdb
