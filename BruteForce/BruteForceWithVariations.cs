@@ -48,6 +48,81 @@ public class BruteForceWithVariations
         }
     }
 
+    private void bruteForce3()
+    {
+        int count = 0;
+        var digits = new char[10];
+        for (char i = '0'; i <= '9'; i++)
+        {
+            digits[count] = i;
+            count++;
+        }
+        count = 0;
+        var chars = new char[26];
+        for (char i = 'a'; i <= 'z'; i++)
+        {
+            chars[count] = i;
+            count++;
+        }
+
+        var allElements = digits.Concat(chars).ToArray();
+        string all = "";
+        foreach (var n in allElements)
+        {
+            all += n.ToString();
+        }
+
+        SortedDictionary<int, int> map = new SortedDictionary<int, int>();
+        int minTime = int.MaxValue;
+        DateTime now = new DateTime();
+
+
+        for (int i = 1; i <= 5; i++)
+        {
+            string pass = "";
+
+            for (int k = 0; k < i; k++)
+            {
+                pass += i.ToString();
+            }
+
+            now = DateTime.Now;
+            int t1 = now.Millisecond;
+            SendTextAndClick(pass);
+            now = DateTime.Now;
+            int t2 = now.Millisecond;
+
+            int time = t2 - t1;
+
+            if (time < minTime)
+            {
+                minTime = time;
+                map.Add(minTime, pass.Length);
+            }
+            else if (time > minTime)
+            {
+                break;
+            }
+
+        }
+
+
+        for (int i = map[minTime]; ; i++)
+        {
+            var pass = new int[i];
+
+            do
+            {
+                var passChars = pass
+                    .Select(s => allElements[s])
+                    .ToArray();
+
+                SendTextAndClick(new String(passChars));
+            }
+            while (Next(36, pass));
+        }
+    }
+
     #region test1
     private void printNCharPwd(string prefix, int num, char[] allElements)
     {

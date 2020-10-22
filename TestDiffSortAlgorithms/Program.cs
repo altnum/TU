@@ -18,10 +18,19 @@ namespace TestDiffSortAlgorithms
             Initializer(nums);
 
             DateTime now = new DateTime();
+            string str1 = "123";
+            string str2 = "z";
+            string str3 = "zz";
+            string str4 = "zzz";
+            string str5 = "zzzz";
+            string str6 = "zzzzz";
 
             now = DateTime.Now;
             Console.WriteLine(now.Second + " " + now.Millisecond);
-            InsertionSort(nums);
+            //InsertionSort(nums);
+            if (str1 == str5)
+                str1 = str4;
+
             now = DateTime.Now;
             Console.WriteLine(now.Second + " " + now.Millisecond);
 
