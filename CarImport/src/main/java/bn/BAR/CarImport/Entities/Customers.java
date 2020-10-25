@@ -13,9 +13,7 @@ public class Customers {
     @Column(name = "name")
     private String name;
 
-    public Customers() {
-
-    }
+    public Customers() {}
 
     public Customers(String name) {
         this.name = name;
