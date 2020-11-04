@@ -15,6 +15,11 @@ public class Customers {
 
     public Customers() {}
 
+    public Customers(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public Customers(String name) {
         this.name = name;
     }
