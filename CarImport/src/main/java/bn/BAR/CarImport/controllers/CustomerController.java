@@ -1,6 +1,8 @@
 package bn.BAR.CarImport.controllers;
 
+import bn.BAR.CarImport.Entities.City;
 import bn.BAR.CarImport.Entities.Customers;
+import bn.BAR.CarImport.repositories.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +20,8 @@ public class CustomerController {
 
     @Autowired
     CustomersRepository customersRepository;
+    @Autowired
+    CityRepository cityRepository;
 
     @GetMapping("/all")
         public List<Customers> getCustomers() {
@@ -37,12 +41,22 @@ public class CustomerController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<?> saveOrUpdateCustomer(@RequestParam(required = false) Long id, @RequestParam(required = false) String name) {
+    public ResponseEntity<?> saveOrUpdateCustomer(@RequestParam(required = false) Long id, @RequestParam(required = false) String name, @RequestParam(required = false) String cityName) {
+        boolean isNew = id == null;
+
+        City city = cityRepository.findCityByName(cityName.toLowerCase());
         Customers customer = new Customers(id, name);
+        customer.setCity(city);
         customer = customersRepository.save(customer);
+
         Map<String, Object> response = new HashMap<>();
         response.put("Генерирано ID:", customer.getId());
-        response.put("message", "Успешно записан!");
+
+        if (isNew) {
+            response.put("message", "Успешно записан!");
+        } else {
+            response.put("message", "Успешно редактиран!");
+        }
 
         return new ResponseEntity<>(response, HttpStatus.OK);
 

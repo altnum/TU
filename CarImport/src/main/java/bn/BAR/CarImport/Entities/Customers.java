@@ -1,6 +1,8 @@
 package bn.BAR.CarImport.Entities;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="customers")
@@ -12,6 +14,14 @@ public class Customers {
 
     @Column(name = "name")
     private String name;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "city_id")
+    private City city;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "roles_customers", joinColumns = @JoinColumn(name = "customer_id"), inverseJoinColumns = @JoinColumn(name = "roles_id"))
+    private Set<Roles> rolesSet = new HashSet<>();
 
     public Customers() {}
 
@@ -34,6 +44,22 @@ public class Customers {
 
     public String getName() {
         return name;
+    }
+
+    public Set<Roles> getRolesSet() {
+        return rolesSet;
+    }
+
+    public void setRolesSet(Set<Roles> rolesSet) {
+        this.rolesSet = rolesSet;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
     }
 
     public void setName(String name) {
