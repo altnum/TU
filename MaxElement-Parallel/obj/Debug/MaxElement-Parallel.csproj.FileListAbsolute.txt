@@ -1,0 +1,7 @@
+D:\TU\MaxElement-Parallel\bin\Debug\MaxElement-Parallel.exe.config
+D:\TU\MaxElement-Parallel\bin\Debug\MaxElement-Parallel.exe
+D:\TU\MaxElement-Parallel\bin\Debug\MaxElement-Parallel.pdb
+D:\TU\MaxElement-Parallel\obj\Debug\MaxElement-Parallel.csprojAssemblyReference.cache
+D:\TU\MaxElement-Parallel\obj\Debug\MaxElement-Parallel.csproj.CoreCompileInputs.cache
+D:\TU\MaxElement-Parallel\obj\Debug\MaxElement-Parallel.exe
+D:\TU\MaxElement-Parallel\obj\Debug\MaxElement-Parallel.pdb
