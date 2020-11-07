@@ -1,0 +1,7 @@
+D:\TU\Parallel Programming\Lunch students\bin\Debug\Lunch students.exe.config
+D:\TU\Parallel Programming\Lunch students\bin\Debug\Lunch students.exe
+D:\TU\Parallel Programming\Lunch students\bin\Debug\Lunch students.pdb
+D:\TU\Parallel Programming\Lunch students\obj\Debug\Lunch students.csprojAssemblyReference.cache
+D:\TU\Parallel Programming\Lunch students\obj\Debug\Lunch students.csproj.CoreCompileInputs.cache
+D:\TU\Parallel Programming\Lunch students\obj\Debug\Lunch students.exe
+D:\TU\Parallel Programming\Lunch students\obj\Debug\Lunch students.pdb
