@@ -1,0 +1,7 @@
+D:\TU\Huffman Coding\Huffman Coding\bin\Debug\Huffman Coding.exe.config
+D:\TU\Huffman Coding\Huffman Coding\bin\Debug\Huffman Coding.exe
+D:\TU\Huffman Coding\Huffman Coding\bin\Debug\Huffman Coding.pdb
+D:\TU\Huffman Coding\Huffman Coding\obj\Debug\Huffman Coding.csprojAssemblyReference.cache
+D:\TU\Huffman Coding\Huffman Coding\obj\Debug\Huffman Coding.csproj.CoreCompileInputs.cache
+D:\TU\Huffman Coding\Huffman Coding\obj\Debug\Huffman Coding.exe
+D:\TU\Huffman Coding\Huffman Coding\obj\Debug\Huffman Coding.pdb
