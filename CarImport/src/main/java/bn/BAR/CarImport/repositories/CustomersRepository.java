@@ -4,8 +4,9 @@ import bn.BAR.CarImport.Entities.Customers;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-public interface CustomersRepository extends JpaRepository<Customers, Long> {
+import java.util.Optional;
 
+public interface CustomersRepository extends JpaRepository<Customers, Long> {
     @Query("SELECT c FROM Customers c WHERE lower(c.name) = :name")
-    Customers findByName(String name);
+    Optional<Customers> findByName(String name);
 }

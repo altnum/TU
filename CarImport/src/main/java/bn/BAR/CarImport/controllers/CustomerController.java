@@ -33,10 +33,22 @@ public class CustomerController {
         return customersRepository.findById(id == null ? 3L : id);
     }
 
+    @GetMapping("/search/name")
+    public ResponseEntity<?> getCustomersByName(@RequestParam(required = false) String name) {
+        if(name == null || name.isBlank()) {
+            return ResponseEntity.badRequest().body("Не сте подали име като критерий за търсене");
+        }
+        Optional<Customers> result = customersRepository.findByName(name.toLowerCase());
+        return result.isPresent() ? ResponseEntity.ok(result.get()) : ResponseEntity.ok("Няма намерен потребител спрямо зададените критерии");
+    }
+
     @DeleteMapping("/delete")
     public ResponseEntity<?> deleteCustomer(@RequestParam Long id) {
         if (id == null) return ResponseEntity.badRequest().body("Не сте въвели ID!");
-        customersRepository.findById(id).ifPresent(customer -> customersRepository.delete(customer));
+        else if (!customersRepository.existsById(id)){
+            return ResponseEntity.ok("Няма такъв човек!");
+        }
+        customersRepository.deleteById(id);
         return ResponseEntity.ok("Успешно изтрит!");
     }
 
@@ -50,6 +62,7 @@ public class CustomerController {
         customer = customersRepository.save(customer);
 
         Map<String, Object> response = new HashMap<>();
+        
         response.put("Генерирано ID:", customer.getId());
 
         if (isNew) {
@@ -61,14 +74,4 @@ public class CustomerController {
         return new ResponseEntity<>(response, HttpStatus.OK);
 
     }
-
-    @GetMapping("/search/name")
-        public ResponseEntity<?> getCustomersByName(@RequestParam(required = false) String name) {
-        if(name == null || name.isBlank()) {
-            return ResponseEntity.badRequest().body("Не сте подали име като критерий за търсене");
-        }
-        Customers result = customersRepository.findByName(name.toLowerCase());
-        return result == null ? ResponseEntity.ok("Няма намерен потребител спрямо зададените критерии") : ResponseEntity.ok(result);
-    }
-
 }

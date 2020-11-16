@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ErrorHandlerController implements ErrorController {
 
-    @RequestMapping("/error")
+    private static final String PATH = "/error";
+
+    @RequestMapping(value = PATH)
     public ResponseEntity<?> error() {
         return  ResponseEntity.badRequest().body("Въвели сте грешен URL линк!");
     }
