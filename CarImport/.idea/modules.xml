@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CarImport.iml" filepath="$PROJECT_DIR$/CarImport.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CarImport-backend/CarImport-backend.iml" filepath="$PROJECT_DIR$/CarImport-backend/CarImport-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-ui/demo-ui.iml" filepath="$PROJECT_DIR$/demo-ui/demo-ui.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,7 @@
+D:\TU\OptimalPath\bin\Debug\OptimalPath.exe.config
+D:\TU\OptimalPath\bin\Debug\OptimalPath.exe
+D:\TU\OptimalPath\bin\Debug\OptimalPath.pdb
+D:\TU\OptimalPath\obj\Debug\OptimalPath.csprojAssemblyReference.cache
+D:\TU\OptimalPath\obj\Debug\OptimalPath.csproj.CoreCompileInputs.cache
+D:\TU\OptimalPath\obj\Debug\OptimalPath.exe
+D:\TU\OptimalPath\obj\Debug\OptimalPath.pdb

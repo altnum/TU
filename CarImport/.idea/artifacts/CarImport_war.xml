@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="CarImport:war">
+    <output-path>$PROJECT_DIR$/CarImport-backend/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>CarImport</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="CarImport-backend-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="CarImport:war exploded" />
+    </root>
+  </artifact>
+</component>
