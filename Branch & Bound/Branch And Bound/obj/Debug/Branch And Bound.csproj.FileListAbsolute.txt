@@ -1,0 +1,7 @@
+D:\TU\Branch & Bound\Branch And Bound\bin\Debug\Branch And Bound.exe.config
+D:\TU\Branch & Bound\Branch And Bound\bin\Debug\Branch And Bound.exe
+D:\TU\Branch & Bound\Branch And Bound\bin\Debug\Branch And Bound.pdb
+D:\TU\Branch & Bound\Branch And Bound\obj\Debug\Branch And Bound.csprojAssemblyReference.cache
+D:\TU\Branch & Bound\Branch And Bound\obj\Debug\Branch And Bound.csproj.CoreCompileInputs.cache
+D:\TU\Branch & Bound\Branch And Bound\obj\Debug\Branch And Bound.exe
+D:\TU\Branch & Bound\Branch And Bound\obj\Debug\Branch And Bound.pdb
