@@ -2,26 +2,29 @@ package bn.BAR.CarImport.controllers;
 
 import bn.BAR.CarImport.Entities.City;
 import bn.BAR.CarImport.Entities.Customers;
+import bn.BAR.CarImport.Entities.Roles;
 import bn.BAR.CarImport.repositories.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import bn.BAR.CarImport.repositories.CustomersRepository;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/customers")
 public class CustomerController {
 
-    @Autowired
-    CustomersRepository customersRepository;
-    @Autowired
-    CityRepository cityRepository;
+    private final CustomersRepository customersRepository;
+    private final CityRepository cityRepository;
+
+    public CustomerController(CustomersRepository customersRepository, CityRepository cityRepository) {
+        this.customersRepository = customersRepository;
+        this.cityRepository = cityRepository;
+    }
 
     @GetMapping("/all")
         public List<Customers> getCustomers() {

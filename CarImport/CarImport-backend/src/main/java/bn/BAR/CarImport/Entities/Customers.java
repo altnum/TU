@@ -1,5 +1,7 @@
 package bn.BAR.CarImport.Entities;
 
+import org.springframework.context.annotation.Lazy;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -28,6 +30,13 @@ public class Customers {
     public Customers(Long id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public Customers(Long id, String name, City city, Set<Roles> rolesSet) {
+        this.id = id;
+        this.name = name;
+        this.city = city;
+        this.rolesSet = rolesSet;
     }
 
     public Customers(String name) {
