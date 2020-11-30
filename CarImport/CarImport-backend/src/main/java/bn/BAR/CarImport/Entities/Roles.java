@@ -1,6 +1,7 @@
 package bn.BAR.CarImport.Entities;
 
 import javax.persistence.*;
+import java.util.ArrayDeque;
 
 @Entity
 @Table(name = "roles")

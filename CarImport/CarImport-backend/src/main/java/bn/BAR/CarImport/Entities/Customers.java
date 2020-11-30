@@ -1,7 +1,5 @@
 package bn.BAR.CarImport.Entities;
 
-import org.springframework.context.annotation.Lazy;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
