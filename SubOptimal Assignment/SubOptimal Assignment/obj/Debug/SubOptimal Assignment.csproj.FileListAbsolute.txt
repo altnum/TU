@@ -1,0 +1,7 @@
+D:\TU\SubOptimal Assignment\SubOptimal Assignment\bin\Debug\SubOptimal Assignment.exe.config
+D:\TU\SubOptimal Assignment\SubOptimal Assignment\bin\Debug\SubOptimal Assignment.exe
+D:\TU\SubOptimal Assignment\SubOptimal Assignment\bin\Debug\SubOptimal Assignment.pdb
+D:\TU\SubOptimal Assignment\SubOptimal Assignment\obj\Debug\SubOptimal Assignment.csprojAssemblyReference.cache
+D:\TU\SubOptimal Assignment\SubOptimal Assignment\obj\Debug\SubOptimal Assignment.csproj.CoreCompileInputs.cache
+D:\TU\SubOptimal Assignment\SubOptimal Assignment\obj\Debug\SubOptimal Assignment.exe
+D:\TU\SubOptimal Assignment\SubOptimal Assignment\obj\Debug\SubOptimal Assignment.pdb

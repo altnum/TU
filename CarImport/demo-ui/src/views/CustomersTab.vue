@@ -1,7 +1,17 @@
 <template>
   <div>
     <header class="jumbotron">
-      <h1>{{result}}</h1>
+        <div v-for="(item, index) in result" :key="item.id">
+          <header><h3>Customer №{{index}}</h3></header>
+          Име: {{ item.name }}
+          <div v-if="item.city">
+            <h4>Град: </h4>{{ item.city.name }}
+          </div>
+          <div v-else>
+              <h4>Град: </h4>Не е въведен.
+          </div>
+          <hr>
+      </div>
     </header>
   </div>
 </template>
@@ -13,7 +23,7 @@ export default {
   name: 'CustomersTab.vue',
   data () {
     return {
-      result: ''
+      result: [{ id: '', name: '', city: { id: '', name: '' } }]
     }
   },
   mounted () {
