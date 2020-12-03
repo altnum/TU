@@ -1,18 +1,22 @@
 <template>
   <div>
-    <header class="jumbotron">
-        <div v-for="(item, index) in result" :key="item.id">
-          <header><h3>Customer №{{index}}</h3></header>
-          Име: {{ item.name }}
-          <div v-if="item.city">
-            <h4>Град: </h4>{{ item.city.name }}
-          </div>
-          <div v-else>
-              <h4>Град: </h4>Не е въведен.
-          </div>
-          <hr>
-      </div>
-    </header>
+    <button class="btn" v-on:click="searchCustomers">Търси</button>
+    <b-table striped hover bordered :items="result" :fields="fields">
+      <template slot="top-row" slot-scope="{ fields }">
+        <td v-for="field in fields" :key="field.id">
+          <input v-model="filters[field.key]" :placeholder="field.label">
+        </td>
+      </template>
+
+      <template v-slot:cell(city)="data">
+        <div v-if="data.item.city">
+        {{ data.item.city.name }}
+        </div>
+        <div v-else>
+          Няма град
+        </div>
+      </template>
+    </b-table>
   </div>
 </template>
 
@@ -23,7 +27,13 @@ export default {
   name: 'CustomersTab.vue',
   data () {
     return {
-      result: [{ id: '', name: '', city: { id: '', name: '' } }]
+      result: [{ id: '', name: '', city: { id: '', name: '' } }],
+      fields: [{ key: 'name', label: 'Име' }, { key: 'city', label: 'Град' }],
+      filters: {
+        name: '',
+        city: ''
+      },
+      totalItems: ''
     }
   },
   mounted () {
@@ -35,6 +45,19 @@ export default {
         this.result = (error.response && error.response.data) || error.message || error.toString()
       }
     )
+  },
+  methods: {
+    searchCustomers () {
+      CustomersService.getCustomersPage(this.filters).then(
+        response => {
+          this.result = response.data.result
+          this.totalItems = response.data.totalItems
+        },
+        error => {
+          this.result = (error.response && error.response.data) || error.message || error.toString()
+        }
+      )
+    }
   }
 }
 </script>

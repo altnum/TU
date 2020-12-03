@@ -6,6 +6,10 @@ class CustomersService {
   getAllCustomers () {
     return axios.get(API_URL + '/all')
   }
+
+  getCustomersPage (filters) {
+    return axios.get(API_URL + '/search/page', { params: { lastName: filters.lastName } })
+  }
 }
 
 export default new CustomersService()
