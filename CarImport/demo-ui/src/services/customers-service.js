@@ -7,8 +7,8 @@ class CustomersService {
     return axios.get(API_URL + '/all')
   }
 
-  getCustomersPage (filters) {
-    return axios.get(API_URL + '/search/page', { params: { lastName: filters.lastName } })
+  getCustomersPage (filters, currentPage, perPage) {
+    return axios.get(API_URL + '/search/pages', { params: { currentPage: currentPage, perPage: perPage, name: filters.name, city: filters.city } })
   }
 }
 

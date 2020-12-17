@@ -2,10 +2,10 @@ package bn.BAR.CarImport.controllers;
 
 import bn.BAR.CarImport.Entities.City;
 import bn.BAR.CarImport.Entities.Customers;
-import bn.BAR.CarImport.Entities.Roles;
 import bn.BAR.CarImport.repositories.CityRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,8 +18,8 @@ import java.util.*;
 @RequestMapping("/customers")
 public class CustomerController {
 
-    private final CustomersRepository customersRepository;
-    private final CityRepository cityRepository;
+    private CustomersRepository customersRepository;
+    private CityRepository cityRepository;
 
     public CustomerController(CustomersRepository customersRepository, CityRepository cityRepository) {
         this.customersRepository = customersRepository;
@@ -36,7 +36,7 @@ public class CustomerController {
         return customersRepository.findById(id == null ? 3L : id);
     }
 
-    @GetMapping("/search/name")
+   /* @GetMapping("/search/name")
     public ResponseEntity<?> getCustomersByName(@RequestParam(required = false) String name) {
         if(name == null || name.isBlank()) {
             return ResponseEntity.badRequest().body("Не сте подали име като критерий за търсене");
@@ -44,6 +44,8 @@ public class CustomerController {
         Optional<Customers> result = customersRepository.findByName(name.toLowerCase());
         return result.isPresent() ? ResponseEntity.ok(result.get()) : ResponseEntity.ok("Няма намерен потребител спрямо зададените критерии");
     }
+
+    */
 
     @DeleteMapping("/delete")
     public ResponseEntity<?> deleteCustomer(@RequestParam Long id) {
@@ -61,6 +63,7 @@ public class CustomerController {
 
         City city = cityRepository.findCityByName(cityName.toLowerCase());
         Customers customer = new Customers(id, name);
+
         customer.setCity(city);
         customer = customersRepository.save(customer);
 
@@ -75,6 +78,24 @@ public class CustomerController {
         }
 
         return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 
+    @GetMapping("/search/pages")
+    public ResponseEntity<?> paginateCustomers
+            (@RequestParam(value = "currentPage", defaultValue = "1") int currentPage,
+             @RequestParam(value = "perPage", defaultValue =  "3") int perPage,
+             @RequestParam(required = false) String name,
+             @RequestParam(required = false) String city) {
+
+        Pageable pageable = PageRequest.of(currentPage -1, perPage);
+        Page<Customers> customers = customersRepository.findPageCustomers(pageable, name.toLowerCase(), city.toLowerCase());
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("result", customers.getContent());
+        response.put("currentPage", customers.getNumber());
+        response.put("totalItems", customers.getTotalElements());
+        response.put("totalPages", customers.getTotalPages());
+
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
