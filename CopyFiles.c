@@ -3,7 +3,34 @@
  #include <unistd.h>
  #include <sys/mman.h>
  #include <sys/stat.h>
+ #include <sys/types.h>
  #include <stdlib.h>
+ #include <fcntl.h>
+
+ void filecpy(char src[], char dest[]) {
+    FILE *f1;
+    f1 = fopen(src, "r"); 
+    FILE *f2;
+    f2 = fopen(dest, "w+");
+
+    if (f1 == NULL || f2 == NULL) {
+        printf("An error occurred while opening files.");
+        exit(EXIT_FAILURE);
+    }
+
+    off_t s = lseek(fileno(f1), 0, SEEK_END);
+    lseek(fileno(f1), 0, SEEK_SET);
+
+    char * c = malloc(s);
+
+    if (read(fileno(f1), c, s) == s)
+        write(fileno(f2), c, s);
+
+    free(c);
+
+    fclose(f1);
+    fclose(f2);
+ }
 
  int main(int argc, char**argv) {
     char path[100];
@@ -34,7 +61,7 @@
     res[0] = '\0';
     strcat(res, "/");
     
-    printf("Enter new file name: ");
+    printf("Enter new file name with extension: ");
     scanf("%s", name2);
     strcat(res, name2);
     char *result = malloc(strlen(fpath2) + strlen(res) + 1);
@@ -42,13 +69,15 @@
     strcat(result, res);
     printf("%s", result);
 
-    FILE *fp;
-    fp = fopen(result, "w+");
+    FILE *dest;
+    dest = fopen(result, "w+");
 
-    int num = ftruncate(fileno(fp), stats.st_size);
+    int num = ftruncate(fileno(dest), stats.st_size);
 
-    fclose(fp);
+    fclose(dest);
 
-    //function to copy memory from the first file to the new one (like memcpy())
+
+    filecpy(path, result);
+
     return 0;
  }
