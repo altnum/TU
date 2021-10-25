@@ -20,7 +20,7 @@ Sub Main()
 End Sub
 
 Private Sub Wald()
-  'Критерий на Уолд
+
   
   Range(Cells(5, Sheets("VRRN_1").Cells(1, 2) + 2), Cells(Sheets("VRRN_1").Cells(1, 2) + 5, Sheets("VRRN_1").Cells(2, 2) + 2)).Clear
   
